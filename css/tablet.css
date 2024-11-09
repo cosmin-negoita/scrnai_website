@@ -1,0 +1,218 @@
+/*=============================================
+Sizing Units
+=============================================*/
+
+:root {
+    --gap-s: 8px;
+    --gap-m: 16px;
+    --gap-l: 32px;
+    --gap-xl: 40px;
+    --gap-xxl: 40px;
+    --gap-yes: 80px;
+}
+
+/*=============================================
+Typography
+=============================================*/
+
+.body-small {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.body {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.body-big {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.heading {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+/*=============================================
+Button
+=============================================*/
+
+.button__bg {
+    padding: 12px 12px 12px 20px;
+    gap: 20px;
+}
+
+/*=============================================
+Sections
+=============================================*/
+
+.wrapper {
+    padding: 0 5vw;
+}
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-yes);
+}
+.section {
+    padding: 0 var(--gap-xxl);
+}
+
+.pad-s {
+    padding: var(--gap-s);
+}
+.pad-m {
+    padding: var(--gap-m);
+}
+.pad-l {
+    padding-left: var(--gap-l);
+}
+.pad-xl {
+    padding: var(--gap-xl);
+}
+.pad-xxl {
+    padding: var(--gap-xxl);
+}
+
+/*=============================================
+Divider
+=============================================*/
+
+.divider__container {
+    top: -80px;
+    height: 161px;
+}
+.divider__shadow, .divider__light {
+    height: 80px;
+}
+
+/*=============================================
+Hero
+=============================================*/ 
+
+.hero, .hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    height: 100vh;
+    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+    padding: calc(36px + 20px + 80px) 0 80px 0;
+    gap: 80px;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.hero__title {
+    width: 100%;
+    max-width: 500px;
+}
+
+.hero__body {
+    width: 100%;
+    max-width: 300px;
+    align-self: flex-end;
+}
+
+.hero__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+/*=============================================
+NavBar
+=============================================*/
+
+.navBar {
+    top: 40px;
+    left: 80px;
+    right: 80px;
+}
+
+.navBar--scrolling {
+    padding: 16px 20px;
+    top: 20px;
+}
+
+.navBar--scrolling .logo {
+    height: 24px;
+}
+
+.logo {
+    height: 24px;
+}
+
+.navBar__menu__item.navBar__menu__item--link {
+    display: none;
+}
+
+/*=============================================
+How It Works
+=============================================*/
+
+/*=============================================
+Automate
+=============================================*/
+
+.automate__container {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    align-items: center;
+}
+
+.automate--tablet .input img, .automate--tablet .output img {
+    width: 96px;
+}
+
+.automate--desktop {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .automate--tablet {
+        display: none;
+    }
+}
+
+/*=============================================
+Content Scroller
+=============================================*/
+
+.content-scroller__tab {
+    width: 240px;
+    padding: 12px 20px;
+}
+
+.content-scroller__descriptions {
+    width: 100%;
+    max-width: 570px;
+}
+
+/*=============================================
+Use Cases
+=============================================*/
+
+.useCases__scroller {
+    padding: 0 var(--gap-xxl);
+}
