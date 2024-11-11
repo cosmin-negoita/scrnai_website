@@ -11,13 +11,34 @@ function makeScroller(className, prevButton = 'scroller__prev', nextButton = 'sc
             this.totalSlides = Math.ceil(this.element.children.length / this.elementsPerSlide);
             this.gap = gap;
             this.container = element.querySelector('.scroller__container') || this.createContainer();
-            this.addStyles();
+
+            this.element.classList.add('scroller');
+            if (this.fadeWidth > 0) {
+                this.element.classList.add('scroller--fade');
+            }
+            
+            this.updateDimensions();
+            this.updateDimensions = this.updateDimensions.bind(this);
+            window.addEventListener('resize', this.updateDimensions);
 
             if (this.prevButton) this.prevButton.addEventListener('click', () => this.switchSlides('prev'));
             if (this.nextButton) this.nextButton.addEventListener('click', () => this.switchSlides('next'));
         }
 
-        addStyles() {
+        updateDimensions() {
+            const computedStyle = window.getComputedStyle(this.element);
+            const paddingLeft = parseInt(computedStyle.paddingLeft) || 0;
+            const paddingRight = parseInt(computedStyle.paddingRight) || 0;
+            const parentWidth = this.element.offsetWidth - paddingLeft - paddingRight;
+            const gapTotal = this.gap * (this.elementsPerSlide - 1);
+            const availableWidth = parentWidth - gapTotal;
+            const itemWidth = availableWidth / this.elementsPerSlide;
+            console.log(parentWidth);
+            
+            this.addStyles(itemWidth);
+        }
+
+        addStyles(itemWidth) {
             let styleSheet;
             if (!document.getElementById('scroller-styles')) {
                 styleSheet = document.createElement('style');
@@ -36,7 +57,7 @@ function makeScroller(className, prevButton = 'scroller__prev', nextButton = 'sc
                     transition: transform 0.5s ease-in-out;
                 }
                 .scroller__item {
-                    width: ${(document.querySelector('.scroller__container').offsetWidth - (this.gap * (this.elementsPerSlide - 1))) / this.elementsPerSlide}px;
+                    width: ${itemWidth}px;
                 }
                 .scroller--fade {
                     -webkit-mask-image: linear-gradient(
@@ -52,11 +73,6 @@ function makeScroller(className, prevButton = 'scroller__prev', nextButton = 'sc
             Array.from(document.querySelector('.scroller__container').children).forEach(child => {
                 child.classList.add('scroller__item');
             });
-            
-            this.element.classList.add('scroller');
-            if (this.fadeWidth > 0) {
-                this.element.classList.add('scroller--fade');
-            }
         }
 
         createContainer() {

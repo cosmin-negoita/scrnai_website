@@ -14,13 +14,38 @@ const contentScroller = {
     },
     
     updateDimensions(index) {
+        this.activeImageWidth = this.imageContainerTrack.offsetWidth * 0.5;
+        this.inactiveImageWidth = this.imageContainerTrack.offsetWidth * 0.4;
+        this.imageGap = 16;
+
         this.imageTrackOffset = document.querySelector('.content-scroller__track').offsetWidth / 2 - this.activeImageWidth / 2;
-        
-        const activeImageHeight = document.querySelector('.content-scroller__images__item.active').offsetHeight;
-        this.imageTrack.style.height = `${activeImageHeight}px`;
 
         const offset = index * (this.inactiveImageWidth + this.imageGap);
         this.imageTrack.style.transform = `translateX(${this.imageTrackOffset - offset}px)`;
+
+        let styleElement;
+        if (!document.getElementById('content-scroller-styles')) {
+            styleElement = document.createElement('style');
+            styleElement.id = 'content-scroller-styles';
+            document.head.appendChild(styleElement);
+        } else {
+            styleElement = document.getElementById('content-scroller-styles');
+        }
+        styleElement.innerHTML = `
+            .content-scroller__images {
+                gap: ${this.imageGap}px;
+                height: ${(this.activeImageWidth / 16) * 10}px;
+            }
+            .content-scroller__images__item {
+                width: ${this.inactiveImageWidth}px;
+                height: 100%;
+                flex-shrink: 0;
+            }
+            .content-scroller__images__item.active {
+                width: ${this.activeImageWidth}px;
+            }
+        `;
+        document.head.appendChild(styleElement);
     },
     
     init() {
@@ -28,24 +53,8 @@ const contentScroller = {
         this.descriptions = [...document.querySelectorAll('.content-scroller__description')];
         this.images = [...document.querySelectorAll('.content-scroller__images__item')];
         this.imageTrack = document.querySelector('.content-scroller__images');
+        this.imageContainerTrack = document.querySelector('.content-scroller__track');
         this.totalItems = this.tabs.length;
-        this.activeImageWidth = 500;
-        this.inactiveImageWidth = 400;
-        this.imageGap = 16;
-
-        const styleElement = document.createElement('style');
-        styleElement.innerHTML = `
-            .content-scroller__images {
-                gap: ${this.imageGap}px;
-            }
-            .content-scroller__images__item {
-                width: ${this.inactiveImageWidth}px;
-            }
-            .content-scroller__images__item.active {
-                width: ${this.activeImageWidth}px;
-            }
-        `;
-        document.head.appendChild(styleElement);
 
         this.updateDimensions(this.currentIndex);
         
