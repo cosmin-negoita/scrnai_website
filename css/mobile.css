@@ -5,10 +5,24 @@ Sizing Units
 :root {
     --gap-s: 8px;
     --gap-m: 16px;
-    --gap-l: 32px;
-    --gap-xl: 40px;
-    --gap-xxl: 48px;
+    --gap-l: 24px;
+    --gap-xl: 32px;
+    --gap-xxl: 40px;
     --gap-yes: 80px;
+}
+
+/*=============================================
+Testimonials
+=============================================*/
+
+.wrapper .avatar-image::before {
+    width: 48px;
+    height: 48px;
+}
+
+.wrapper .avatar-image img {
+    width: 48px;
+    height: 48px;
 }
 
 /*=============================================
@@ -16,29 +30,29 @@ Typography
 =============================================*/
 
 .body-small {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 12px;
+    line-height: 16px;
 }
 
 .body {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.body-big {
     font-size: 16px;
     line-height: 24px;
 }
 
-.body-big {
-    font-size: 18px;
-    line-height: 26px;
-}
-
 .heading {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 24px;
     font-weight: 600;
 }
 
 .title {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 28px;
+    line-height: 32px;
 }
 
 /*=============================================
@@ -55,7 +69,7 @@ Sections
 =============================================*/
 
 .wrapper {
-    padding: 0 2vw;
+    padding: 0 var(--gap-m);
 }
 .sections {
     display: flex;
@@ -63,7 +77,7 @@ Sections
     gap: var(--gap-yes);
 }
 .section {
-    padding: 0 var(--gap-xxl);
+    padding: 0;
 }
 
 .pad-s {
@@ -97,6 +111,23 @@ Sections
     min-width: 280px;
 }
 
+.wrapper .container--horiz-mobile {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.wrapper .container--vertical-mobile {
+    flex-direction: column;
+}
+
+.wrapper .mobile-card {
+    padding: var(--gap-xxl) var(--gap-m);
+}
+
+.wrapper .mobile-card.pad-bot-no {
+    padding-bottom: 0;
+}
+
 /*=============================================
 Divider
 =============================================*/
@@ -113,49 +144,30 @@ Divider
 Hero
 =============================================*/ 
 
-.hero, .hero > * {
-    position: relative;
-    z-index: 1;
-}
-
-.hero--mobile {
+.hero {
     display: none;
 }
-
-.hero {
-    height: 100vh;
-    max-height: 900px;
-    display: flex;
-    flex-direction: column;
-    padding: calc(36px + 20px + 40px) 0 80px 0;
+.hero--mobile {
+    padding: 0;
 }
-
-.hero__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-.hero__title {
+.hero--mobile__bg {
+    position: relative;
     width: 100%;
-    max-width: 500px;
+    height: 200px;
+    z-index: 1;
 }
-
-.hero__body {
-    width: 100%;
-    max-width: 300px;
-    align-self: flex-end;
+.hero--mobile__content {
+    position: relative;
+    z-index: 2;
 }
-
-.hero__bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+.hero--mobile .hero--mobile__bg img {
+    display: block;
+    width: 400px;
     height: auto;
-    z-index: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /*=============================================
@@ -163,14 +175,14 @@ NavBar
 =============================================*/
 
 .navBar {
-    top: 40px;
-    left: 80px;
-    right: 80px;
+    top: var(--gap-m);
+    left: var(--gap-m);
+    right: var(--gap-m);
 }
 
 .navBar--scrolling {
-    padding: 16px 20px;
-    top: 20px;
+    padding: 16px var(--gap-m);
+    top: var(--gap-m);
 }
 
 .navBar--scrolling .logo {
@@ -185,11 +197,23 @@ NavBar
     display: none;
 }
 
+.navBar .login-button {
+    display: none;
+}
+
+/*=============================================
+Tired?
+=============================================*/
+
+.marquee img {
+    width: 100px;
+}
+
 /*=============================================
 How It Works
 =============================================*/
 
-.howItWorks__container--mobile {
+.howItWorks__container {
     display: none;
 }
 
@@ -215,8 +239,16 @@ Automate
 Candidates
 =============================================*/
 
-.candidates--mobile {
+.candidates {
     display: none;
+}
+
+.candidates--mobile .icon-stroke {
+    stroke: #ffffff;
+}
+
+.candidates--mobile img {
+    border-radius: var(--radius-m);
 }
 
 /*=============================================
@@ -242,12 +274,12 @@ Use Cases
 =============================================*/
 
 .useCases__scroller {
-    padding: 0 var(--gap-xxl);
+    padding: 0 var(--gap-m);
 }
 
 .useCases__card__inner {
-    min-height: 350px;
-    padding: var(--gap-xl);
+    min-height: 250px;
+    padding: var(--gap-m);
 }
 
 /*=============================================

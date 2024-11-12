@@ -103,6 +103,10 @@ Hero
     z-index: 1;
 }
 
+.hero--mobile {
+    display: none;
+}
+
 .hero {
     height: 100vh;
     max-height: 900px;
@@ -167,6 +171,10 @@ NavBar
 How It Works
 =============================================*/
 
+.howItWorks__container--mobile {
+    display: none;
+}
+
 /*=============================================
 Automate
 =============================================*/
@@ -194,6 +202,14 @@ Automate
 }
 
 /*=============================================
+Candidates
+=============================================*/
+
+.candidates--mobile {
+    display: none;
+}
+
+/*=============================================
 Content Scroller
 =============================================*/
 
@@ -213,4 +229,9 @@ Use Cases
 
 .useCases__scroller {
     padding: 0 var(--gap-xxl);
+}
+
+.useCases__card__inner {
+    min-height: 350px;
+    padding: var(--gap-xl);
 }

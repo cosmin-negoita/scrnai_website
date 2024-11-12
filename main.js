@@ -6,17 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Navbar
     const navBar = document.querySelector('.navBar');
-    if (navBar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                navBar.classList.add('navBar--scrolling');
-            } else {
-                navBar.classList.remove('navBar--scrolling');
-            }
-        });
-    } else {
-        console.warn('Navigation bar element not found! Check if the class "navBar" exists in your HTML.');
-    }
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            navBar.classList.add('navBar--scrolling');
+        } else {
+            navBar.classList.remove('navBar--scrolling');
+        }
+    });
 
     // Initialize sliders
     contentScroller.init();

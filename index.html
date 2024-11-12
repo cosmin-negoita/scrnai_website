@@ -19,7 +19,7 @@
                 <a href="#" class="navBar__menu__item navBar__menu__item--link"><span class="body-small">Use Cases</span></a>
                 <a href="#" class="navBar__menu__item navBar__menu__item--link"><span class="body-small">Testimonials</span></a>
                 <a href="#" class="navBar__menu__item navBar__menu__item--link"><span class="body-small">FAQ</span></a>
-                <a href="#" class="navBar__menu__item navBar__menu__item--ghost-btn">
+                <a href="#" class="navBar__menu__item navBar__menu__item--ghost-btn login-button">
                     <img src="img/icon-circle-user.svg" alt="Join Waitlist">                        
                     <span class="body-small">Login</span>
                 </a>
@@ -45,6 +45,23 @@
                 </div>
                 <img src="img/hero-bg.jpg" alt="Scrn.ai Hero Background" class="hero__bg">
             </div>
+            <div class="section hero--mobile">
+                <div class="container gap-m">
+                    <div class="hero--mobile__bg">
+                        <img src="img/hero-bg.jpg" alt="Scrn.ai Hero Background">
+                    </div>
+                    <div class="hero--mobile__content container container--center gap-m">
+                        <h1 class="title hero__title center">Find, Score and Rank the Best Applicants in Seconds</h1>
+                        <p class="body hero__body center">Scrn's AI-powered video screening helps you quickly find top candidates—perfect for hiring, tenant screening, or reviewing applications on any device.</p>
+                        <a href="#" class="button">
+                            <div class="button__bg">
+                                <span class="heading">Get started for FREE</span>
+                                <img src="img/icon-btn-arrow.svg" alt="Arrow Icon" class="button__icon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div class="section container container--center gap-xxl">
                 <h2 class="title title--regular center limit-width">Tired of Sorting Through Applications? We get it.</h2>
                 <div class="marquee">
@@ -56,64 +73,100 @@
                     <img src="img/ui-resume-06.svg">
                 </div>
                 <div class="container container--horiz break-tablet gap-xl">
-                    <div class="column container gap-m">
+                    <div class="column container container--horiz-mobile gap-m">
                         <img width="24" src="img/icon-file-stack.svg" alt="Way Too Many Applications" class="icon">
-                        <h3 class="heading">Way Too Many Applications</h3>
-                        <p class="body">You’re overwhelmed by a flood of applications, and most don’t meet your criteria.</p>
+                        <div class="container gap-m">
+                            <h3 class="heading">Way Too Many Applications</h3>
+                            <p class="body">You're overwhelmed by a flood of applications, and most don't meet your criteria.</p>
+                        </div>
                     </div>
-                    <div class="column container gap-m">
+                    <div class="column container container--horiz-mobile gap-m">
                         <img width="24" src="img/icon-copy.svg" alt="Everything Looks the Same" class="icon">
-                        <h3 class="heading">Everything Looks the Same</h3>
-                        <p class="body">With AI-generated resumes and cookie-cutter responses, every applicant looks good on paper.</p>
+                        <div class="container gap-m">
+                            <h3 class="heading">Everything Looks the Same</h3>
+                            <p class="body">With AI-generated resumes and cookie-cutter responses, every applicant looks good on paper.</p>
+                        </div>
                     </div>
-                    <div class="column container gap-m">
+                    <div class="column container container--horiz-mobile gap-m">
                         <img width="24" src="img/icon-snail.svg" alt="Slow and Tedious Process" class="icon">
-                        <h3 class="heading">Slow and Tedious Process</h3>
-                        <p class="body">Manual screening eats up time, keeping you from focusing on more critical tasks.</p>
+                        <div class="container gap-m">
+                            <h3 class="heading">Slow and Tedious Process</h3>
+                            <p class="body">Manual screening eats up time, keeping you from focusing on more critical tasks.</p>
+                        </div>
                     </div>
-                    <div class="column container gap-m">
+                    <div class="column container container--horiz-mobile gap-m">
                         <img width="24" src="img/icon-frown.svg" alt="Bias in Decision-Making" class="icon">
-                        <h3 class="heading">Bias in Decision-Making</h3>
-                        <p class="body">Unconscious bias affects your ability to objectively evaluate candidates.</p>
+                        <div class="container gap-m">
+                            <h3 class="heading">Bias in Decision-Making</h3>
+                            <p class="body">Unconscious bias affects your ability to objectively evaluate candidates.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="section card-bg pad-xxl container container--center gap-xxl howItWorks">
+            <div class="section card-bg pad-xxl mobile-card container container--center gap-xxl howItWorks">
                 <h2 class="title title--regular center limit-width">Find the Right Fit Fast With Scrn.ai</h2>
                 <div class="howItWorks__container">
                     <div class="howItWorks__container__inner container container--horiz gap-xl">
                         <div class="howItWorks__rail"></div>
                         <div class="howItWorks__column container gap-l container--center">
-                            <div class="container container--center gap-m">
-                                <div class="circle body-big">1</div>
-                                <h3 class="heading center">Create a Posting</h3>
+                            <img src="img/ui-step-1.svg" alt="Step 1" class="step-mockup">
+                            <div class="container gap-m">
+                                <h3 class="heading center">1. Create a Posting</h3>
+                                <p class="body center" style="z-index: 1">Set up your job or application posting in a matter of minutes.</p>
+                            </div>
+                        </div>
+                        <div class="howItWorks__column container gap-l container--center">
+                            <img src="img/ui-step-2.svg" alt="Step 2" class="step-mockup">
+                            <div class="container gap-m">
+                                <h3 class="heading center">2. Share With Applicants</h3>
+                                <p class="body center" style="z-index: 1">Send the link to our application portal to candidates or applicants.</p>
+                            </div>
+                        </div>
+                        <div class="howItWorks__column container gap-l container--center">
+                            <img src="img/ui-step-3.svg" alt="Step 3" class="step-mockup">
+                            <div class="container gap-m">
+                                <h3 class="heading center">3. Receive Applications</h3>
+                                <p class="body center" style="z-index: 1">Applicants can answer screening questions by video from any device.</p>
+                            </div>
+                        </div>
+                        <div class="howItWorks__column container gap-l container--center">
+                            <img src="img/ui-step-4.svg" alt="Step 4" class="step-mockup">
+                            <div class="container gap-m">
+                                <h3 class="heading center">4. Review Reports</h3>
+                                <p class="body center" style="z-index: 1">Applicants can answer screening questions by video from any device.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="howItWorks__container--mobile">
+                    <div class="howItWorks-scroller container gap-xxl">
+                        <div class="howItWorks__column container gap-l container--center">
+                            <div class="container gap-m">
+                                <h3 class="heading center">1. Create a Posting</h3>
+                                <p class="body center" style="z-index: 1">Set up your job or application posting in a matter of minutes.</p>
                             </div>
                             <img src="img/ui-step-1.svg" alt="Step 1" class="step-mockup">
-                            <p class="body center" style="z-index: 1">Set up your job or application posting in a matter of minutes.</p>
                         </div>
                         <div class="howItWorks__column container gap-l container--center">
-                            <div class="container container--center gap-m">
-                                <div class="circle body-big">2</div>
-                                <h3 class="heading center">Share With Applicants</h3>
+                            <div class="container gap-m">
+                                <h3 class="heading center">2. Share With Applicants</h3>
+                                <p class="body center" style="z-index: 1">Send the link to our application portal to candidates or applicants.</p>
                             </div>
-                            <img src="img/ui-step-2.svg" alt="Step 1" class="step-mockup">
-                            <p class="body center" style="z-index: 1">Send the link to our application portal to candidates or applicants.</p>
+                            <img src="img/ui-step-2.svg" alt="Step 2" class="step-mockup">
                         </div>
                         <div class="howItWorks__column container gap-l container--center">
-                            <div class="container container--center gap-m">
-                                <div class="circle body-big">3</div>
-                                <h3 class="heading center">Receive Applications</h3>
+                            <div class="container gap-m">
+                                <h3 class="heading center">3. Receive Applications</h3>
+                                <p class="body center" style="z-index: 1">Applicants can answer screening questions by video from any device.</p>
                             </div>
-                            <img src="img/ui-step-3.svg" alt="Step 1" class="step-mockup">
-                            <p class="body center" style="z-index: 1">Applicants can answer screening questions by video from any device.</p>
+                            <img src="img/ui-step-3.svg" alt="Step 3" class="step-mockup">
                         </div>
                         <div class="howItWorks__column container gap-l container--center">
-                            <div class="container container--center gap-m">
-                                <div class="circle body-big">4</div>
-                                <h3 class="heading center">Review Reports</h3>
+                            <div class="container gap-m">
+                                <h3 class="heading center">4. Review Reports</h3>
+                                <p class="body center" style="z-index: 1">Applicants can answer screening questions by video from any device.</p>
                             </div>
-                            <img src="img/ui-step-4.svg" alt="Step 1" class="step-mockup">
-                            <p class="body center" style="z-index: 1">Applicants can answer screening questions by video from any device.</p>
+                            <img src="img/ui-step-4.svg" alt="Step 4" class="step-mockup">
                         </div>
                     </div>
                 </div>
@@ -149,22 +202,19 @@
                 </div>
             </div>
             <div class="automate automate--tablet section container container--center pad-side-no gap-xl">
-                <div class="container container--horiz container--center gap-l">
+                <div class="container container--horiz container--center">
                     <div class="input">
                         <img src="img/application-01.svg">
                         <img src="img/application-02.svg">
                         <img src="img/application-03.svg">
                         <img src="img/application-04.svg">
                     </div>
-                    <div class="logo-container">
-                        <img src="img/logo.svg" alt="Scrn.ai" height="48">
-                        <img src="img/logo.svg" alt="Scrn.ai" height="48" class="logo-blur">
-                    </div>
+                    <img src="img/logo-symbol.svg" alt="Scrn.ai" height="32" class="Scrn.ai Symbol">
                     <div class="output">
-                        <img src="img/report-04.svg">
-                        <img src="img/report-03.svg">
-                        <img src="img/report-02.svg">
                         <img src="img/report-01.svg">
+                        <img src="img/report-02.svg">
+                        <img src="img/report-03.svg">
+                        <img src="img/report-04.svg">
                     </div>
                 </div>
                 <div class="container container--center gap-l limit-width">
@@ -180,33 +230,37 @@
                 </div>
             </div>
             <div class="section">
-                <div class="container container--horiz container--center gap-xxl">
+                <div class="container container--horiz container--vertical-mobile container--center gap-xxl">
                     <div class="flex-1">
                         <img src="img/posting-screen.png" alt="Posting Screen" style="width: 100%; height: auto">
                     </div>
                     <div class="container gap-l flex-1">
-                        <div class="icon-holder">
-                            <div class="icon-holder__inner">
-                                <img src="img/icon-file-chart.svg" alt="Analytics Icon">
+                        <div class="container container--horiz-mobile gap-l">
+                            <div class="icon-holder">
+                                <div class="icon-holder__inner">
+                                    <img src="img/icon-file-chart.svg" alt="Analytics Icon">
+                                </div>
                             </div>
+                            <h2 class="title title--regular flex-1">Analyze, Score, and Rank 100% Bias-Free</h2>
                         </div>
-                        <h2 class="title title--regular">Analyze, Score, and Rank 100% Bias-Free</h2>
                         <p class="body-big">Scrn uses AI to objectively analyze resumes and applications, scoring and ranking candidates without the influence of any bias.</p>
                     </div>
                 </div>
             </div>
             <div class="section">
-                <div class="container container--horiz-rev container--center gap-xxl">
+                <div class="container container--horiz-rev container--vertical-mobile container--center gap-xxl">
                     <div class="flex-1">
                         <img src="img/applicant-ui.png" alt="Applicant UI" style="width: 100%; height: auto">
                     </div>
                     <div class="container gap-l flex-1">
-                        <div class="icon-holder">
-                            <div class="icon-holder__inner">
-                                <img src="img/icon-book-user.svg" alt="Applicant Icon">
+                        <div class="container container--horiz-mobile gap-l">
+                            <div class="icon-holder">
+                                <div class="icon-holder__inner">
+                                    <img src="img/icon-book-user.svg" alt="Applicant Icon">
+                                </div>
                             </div>
+                            <h2 class="title title--regular flex-1">Get To Know Candidates On A Deeper Level With Video</h2>
                         </div>
-                        <h2 class="title title--regular">Get To Know Candidates On A Deeper Level With Video</h2>
                         <p class="body-big">Go beyond resumes with custom questions and video responses. Use Scrn’s all-in-one screening solution to evaluate video responses, communication skills and provide deeper insights into each applicant.</p>
                     </div>
                 </div>
@@ -259,8 +313,49 @@
                         </div>
                     </div>
                 </div>
+                <div class="section card-bg pad-xxl mobile-card candidates--mobile">
+                    <div class="container gap-xxl">
+                        <h2 class="title title--regular center limit-width">Streamlined Experience for Your Candidates</h2>
+                        <div class="container gap-l">
+                            <div class="container gap-m">
+                                <div class="container container--horiz container--center container--justify-center gap-s">
+                                    <svg width="24" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="icon-stroke" d="M22.5 7L13.53 12.7C13.2213 12.8934 12.8643 12.996 12.5 12.996C12.1357 12.996 11.7787 12.8934 11.47 12.7L2.5 7M4.5 4H20.5C21.6046 4 22.5 4.89543 22.5 6V18C22.5 19.1046 21.6046 20 20.5 20H4.5C3.39543 20 2.5 19.1046 2.5 18V6C2.5 4.89543 3.39543 4 4.5 4Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <h3 class="heading">Save Contact Details</h3>
+                                </div>
+                                <p class="body center">Get all the personal and contact details you need from your candidates for further reference.</p>
+                            </div>
+                            <img src="img/portal-03.jpg" alt="Easy Setup Process">
+                        </div>
+                        <div class="container gap-l">
+                            <div class="container gap-m">
+                                <div class="container container--horiz container--center container--justify-center gap-s">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="icon-stroke" d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20M15 18C15 17.2044 14.6839 16.4413 14.1213 15.8787C13.5587 15.3161 12.7956 15 12 15M12 15C11.2044 15 10.4413 15.3161 9.87868 15.8787C9.31607 16.4413 9 17.2044 9 18M12 15C13.1046 15 14 14.1046 14 13C14 11.8954 13.1046 11 12 11C10.8954 11 10 11.8954 10 13C10 14.1046 10.8954 15 12 15ZM15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z" stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg> 
+                                    <h3 class="heading">Collect Documents</h3>
+                                </div>
+                                <p class="body center">Request resumes, cover letters and other written documents directly from our platform.</p>
+                            </div>
+                            <img src="img/portal-02.jpg" alt="Recording Interface">
+                        </div>
+                        <div class="container gap-l">
+                            <div class="container gap-m">
+                                <div class="container container--horiz container--center container--justify-center gap-s">
+                                    <svg width="24" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="icon-stroke" d="M16.5 13L21.723 16.482C21.7983 16.5321 21.8858 16.5608 21.9761 16.5652C22.0664 16.5695 22.1563 16.5492 22.236 16.5065C22.3157 16.4639 22.3824 16.4003 22.4289 16.3228C22.4754 16.2452 22.5 16.1564 22.5 16.066V7.87C22.5 7.78202 22.4768 7.6956 22.4328 7.61945C22.3887 7.5433 22.3253 7.48012 22.2491 7.4363C22.1728 7.39248 22.0863 7.36956 21.9983 7.36985C21.9103 7.37015 21.824 7.39366 21.748 7.438L16.5 10.5M4.5 6H14.5C15.6046 6 16.5 6.89543 16.5 8V16C16.5 17.1046 15.6046 18 14.5 18H4.5C3.39543 18 2.5 17.1046 2.5 16V8C2.5 6.89543 3.39543 6 4.5 6Z" stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <h3 class="heading">Get Video Answers</h3>
+                                </div>
+                                <p class="body center">Get video answers which will be parsed by our AI to score each candidate.</p>
+                            </div>
+                            <img src="img/portal-01.jpg" alt="Mobile Experience">
+                        </div>
+                    </div>
+                </div>
                 <div class="section card-bg--lighter pad-no useCases container">
-                    <div class="container container--horiz gap-xl pad-xxl">
+                    <div class="container container--horiz container--vertical-mobile gap-xl pad-xxl mobile-card">
                         <h2 class="title title--regular flex-1">Scrn is Not Just for Resumes and Hiring</h2>
                         <p class="body-big flex-1">We’ve built Scrn to leverage AI in order to score and rank candidates by documents and video answers they provide through our portal, all based on criteria you set up.</p>
                     </div>
@@ -357,11 +452,11 @@
                         <h2 class="title title--regular limit-width center">Companies Become More Efficient After Hiring With Scrn.ai</h2>
                     </div>
                     <div class="testimonials container container--horiz gap-m">
-                        <div class="testimonial container card-bg flex-1 pad-xl gap-xl">
+                        <div class="testimonial container card-bg mobile-card flex-1 pad-xl gap-xl">
                             <p class="body">After firing 80% of Twitter’s employers, we needed a way to quickly build a part of the force with candidates that clearly align with my vision for the company.</p>
                             <div class="container container--horiz container--center gap-m">
                                 <div class="avatar-image">
-                                    <img src="img/testimonial-avatar-01.jpg" width="64" heigh="64" alt="Testimonial Avatar">
+                                    <img src="img/testimonial-avatar-01.jpg" alt="Testimonial Avatar">
                                 </div>
                                 <div class="container">
                                     <span class="body">John Doe</span>
@@ -369,11 +464,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="testimonial container card-bg flex-1 pad-xl gap-xl">
+                        <div class="testimonial container card-bg mobile-card flex-1 pad-xl gap-xl">
                             <p class="body">After firing 80% of Twitter’s employers, we needed a way to quickly build a part of the force with candidates that clearly align with my vision for the company.</p>
                             <div class="container container--horiz container--center gap-m">
                                 <div class="avatar-image">
-                                    <img src="img/testimonial-avatar-01.jpg" width="64" heigh="64" alt="Testimonial Avatar">
+                                    <img src="img/testimonial-avatar-01.jpg" alt="Testimonial Avatar">
                                 </div>
                                 <div class="container">
                                     <span class="body">John Doe</span>
@@ -381,11 +476,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="testimonial container card-bg flex-1 pad-xl gap-xl">
+                        <div class="testimonial container card-bg mobile-card flex-1 pad-xl gap-xl">
                             <p class="body">After firing 80% of Twitter’s employers, we needed a way to quickly build a part of the force with candidates that clearly align with my vision for the company.</p>
                             <div class="container container--horiz container--center gap-m">
                                 <div class="avatar-image">
-                                    <img src="img/testimonial-avatar-01.jpg" width="64" heigh="64" alt="Testimonial Avatar">
+                                    <img src="img/testimonial-avatar-01.jpg" alt="Testimonial Avatar">
                                 </div>
                                 <div class="container">
                                     <span class="body">John Doe</span>
@@ -396,7 +491,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section card-bg card-bg--gradient pad-xxl pad-bot-no">
+            <div class="section card-bg card-bg--gradient mobile-card pad-xxl pad-bot-no">
                 <div class="container container--center gap-xxl">
                     <div class="container container--center gap-xl">
                         <h2 class="title title--regular center dark">Scrn analyzes, scores and ranks applicants, ensuring you only move forward with the most qualified candidates.</h2>

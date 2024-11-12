@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 @import "desktop.css" screen and (min-width: 1025px);
 @import "tablet.css" screen and (min-width: 768px) and (max-width: 1024px);
+@import "mobile.css" screen and (max-width: 767px);
 
 /*=============================================
 General
@@ -168,6 +169,10 @@ strong, b, .bold, .heading, .title {
 /*=============================================
 Wrapper
 =============================================*/
+
+body {
+    overflow-x: hidden;
+}
 
 .wrapper {
     width: 100%;
@@ -545,9 +550,7 @@ Use Cases
 .useCases__card__inner {
     position: relative;
     z-index: 1;
-    min-height: 350px;
     justify-content: space-between;
-    padding: var(--gap-xl);
 }
 .useCases__card__icon, .useCases__card__content {
     position: relative;

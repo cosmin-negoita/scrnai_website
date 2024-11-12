@@ -73,26 +73,27 @@ function makeScroller({
 
         addStyles(itemWidth) {
             let styleSheet;
-            if (!document.getElementById('scroller-styles')) {
+            const styleSheetId = `${className}-styles`;
+            if (!document.getElementById(styleSheetId)) {
                 styleSheet = document.createElement('style');
-                styleSheet.id = 'scroller-styles';
+                styleSheet.id = styleSheetId;
                 document.head.appendChild(styleSheet);
             } else {
-                styleSheet = document.getElementById('scroller-styles');
+                styleSheet = document.getElementById(styleSheetId);
             }
             
             styleSheet.textContent = `
-                .scroller__container {
+                .${className} .scroller__container {
                     display: flex;
                     width: fit-content;
                     gap: ${this.gap}px;
                     overflow: visible;
                     transition: transform 0.5s ease-in-out;
                 }
-                .scroller__item {
+                .${className} .scroller__item {
                     width: ${itemWidth}px;
                 }
-                .scroller--fade {
+                .${className} .scroller--fade {
                     -webkit-mask-image: linear-gradient(
                         to right,
                         transparent,
