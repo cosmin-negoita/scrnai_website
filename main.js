@@ -4,8 +4,8 @@ import { makeMarquee } from './marquee.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Navbar
     const navBar = document.querySelector('.navBar');
-    
     if (navBar) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 0) {
@@ -18,36 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Navigation bar element not found! Check if the class "navBar" exists in your HTML.');
     }
 
-    
-
+    // Initialize sliders
     contentScroller.init();
-    makeScroller('useCases__scroller');
+    makeScroller({ className: 'useCases__scroller', elementsPerSlide: { desktop: 3, tablet: 2, mobile: 1 } });
 
-    const marqueeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const className = Array.from(target.classList)[0]; // Get the first class
-                makeMarquee(className, 1, 16, 0, 'right', className === 'marquee' ? 100 : 80);
-            }
-        });
-    });
+    // Initialize marquee
+    makeMarquee({ className: 'marquee', duration: 10, gap: 16, direction: 'left', fadeWidth: 80 });
+    makeMarquee({ className: 'input', duration: 10, gap: 16, direction: 'right', fadeWidth: 80 });
+    makeMarquee({ className: 'output', duration: 10, gap: 16, direction: 'right', fadeWidth: 80 });
 
-    // Export the observer so it can be used elsewhere if needed
-    window.marqueeObserver = marqueeObserver;
-
-    document.querySelectorAll('.marquee, .input, .output').forEach(element => {
-        marqueeObserver.observe(element);
-    });
-
-    // Accordion functionality
+    // Accordion
     const accordions = document.querySelectorAll('.accordion');
-    
     accordions.forEach(accordion => {
         const header = accordion.querySelector('.accordion__header');
         const content = accordion.querySelector('.accordion__content');
         
-        // Set initial height for animation
         if (accordion.classList.contains('open')) {
             content.style.height = content.scrollHeight + 'px';
         } else {
@@ -55,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         header.addEventListener('click', () => {
-            // Close all other accordions
             accordions.forEach(otherAccordion => {
                 if (otherAccordion !== accordion && otherAccordion.classList.contains('open')) {
                     otherAccordion.classList.remove('open');
@@ -63,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Toggle current accordion
             accordion.classList.toggle('open');
             content.style.height = accordion.classList.contains('open') ? 
                 content.scrollHeight + 'px' : '0';

@@ -7,7 +7,7 @@ Sizing Units
     --gap-m: 16px;
     --gap-l: 32px;
     --gap-xl: 40px;
-    --gap-xxl: 40px;
+    --gap-xxl: 48px;
     --gap-yes: 80px;
 }
 
@@ -55,7 +55,7 @@ Sections
 =============================================*/
 
 .wrapper {
-    padding: 0 5vw;
+    padding: 0 2vw;
 }
 .sections {
     display: flex;
@@ -80,6 +80,21 @@ Sections
 }
 .pad-xxl {
     padding: var(--gap-xxl);
+}
+
+.wrapper .container--vertical-tablet {
+    flex-direction: column;
+}
+
+.wrapper .break-tablet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-xl);
+}
+
+.wrapper .break-tablet > * {
+    flex: 1 1 calc(50% - var(--gap-xl)/2);
+    min-width: 280px;
 }
 
 /*=============================================
@@ -108,8 +123,7 @@ Hero
     max-height: 900px;
     display: flex;
     flex-direction: column;
-    padding: calc(36px + 20px + 80px) 0 80px 0;
-    gap: 80px;
+    padding: calc(36px + 20px + 40px) 0 80px 0;
 }
 
 .hero__content {
@@ -193,9 +207,13 @@ Automate
 Content Scroller
 =============================================*/
 
+.wrapper .content-scroller__tabs, .wrapper .content-scroller__tab {
+    border-radius: var(--radius-m);
+}
 .content-scroller__tab {
-    width: 240px;
+    width: 200px;
     padding: 12px 20px;
+    flex-direction: column;
 }
 
 .content-scroller__descriptions {
@@ -209,4 +227,16 @@ Use Cases
 
 .useCases__scroller {
     padding: 0 var(--gap-xxl);
+}
+
+/*=============================================
+Testimonials
+=============================================*/
+
+.wrapper .testimonials {
+    flex-direction: column;
+}
+
+.wrapper .testimonial {
+    gap: var(--gap-m);
 }

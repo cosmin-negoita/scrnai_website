@@ -1,14 +1,30 @@
-function makeScroller(className, prevButton = 'scroller__prev', nextButton = 'scroller__next', fadeWidth = 0, elementsPerSlide = 3, gap = 16) {
+function makeScroller({ 
+    className, 
+    prevButton = 'scroller__prev', 
+    nextButton = 'scroller__next', 
+    fadeWidth = 0, 
+    elementsPerSlide = {
+        desktop: 3,
+        tablet: 2,
+        mobile: 1
+    },
+    breakpoints = {
+        tablet: 1024,
+        mobile: 767
+    },
+    gap = 16 
+}) {
     class Scroller {
-        constructor(element, fadeWidth, elementsPerSlide, prevButton, nextButton) {
+        constructor(element, fadeWidth, elementsPerSlide, prevButton, nextButton, breakpoints) {
             this.element = element;
             this.prevButton = document.querySelector(`.${prevButton}`);
             this.nextButton = document.querySelector(`.${nextButton}`);
             this.currentIndex = 0;
             this.fadeWidth = fadeWidth;
             this.elementsPerSlide = elementsPerSlide;
+            this.breakpoints = breakpoints;
             this.totalElements = this.element.children.length;
-            this.totalSlides = Math.ceil(this.element.children.length / this.elementsPerSlide);
+            this.totalSlides = Math.ceil(this.element.children.length / this.elementsPerSlide.desktop);
             this.gap = gap;
             this.container = element.querySelector('.scroller__container') || this.createContainer();
 
@@ -25,15 +41,32 @@ function makeScroller(className, prevButton = 'scroller__prev', nextButton = 'sc
             if (this.nextButton) this.nextButton.addEventListener('click', () => this.switchSlides('next'));
         }
 
+        getCurrentBreakpoint() {
+            const width = window.innerWidth;
+            if (width <= this.breakpoints.mobile) return 'mobile';
+            if (width <= this.breakpoints.tablet) return 'tablet';
+            return 'desktop';
+        }
+
         updateDimensions() {
             const computedStyle = window.getComputedStyle(this.element);
             const paddingLeft = parseInt(computedStyle.paddingLeft) || 0;
             const paddingRight = parseInt(computedStyle.paddingRight) || 0;
             const parentWidth = this.element.offsetWidth - paddingLeft - paddingRight;
-            const gapTotal = this.gap * (this.elementsPerSlide - 1);
+            
+            const currentBreakpoint = this.getCurrentBreakpoint();
+            const currentElementsPerSlide = this.elementsPerSlide[currentBreakpoint];
+            
+            const gapTotal = this.gap * (currentElementsPerSlide - 1);
             const availableWidth = parentWidth - gapTotal;
-            const itemWidth = availableWidth / this.elementsPerSlide;
-            console.log(parentWidth);
+            const itemWidth = availableWidth / currentElementsPerSlide;
+            
+            this.totalSlides = Math.ceil(this.totalElements / currentElementsPerSlide);
+            
+            if (this.currentIndex >= this.totalSlides) {
+                this.currentIndex = this.totalSlides - 1;
+                this.container.style.transform = `translateX(calc(-${this.currentIndex * (this.container.offsetWidth / this.totalSlides)}px))`;
+            }
             
             this.addStyles(itemWidth);
         }
@@ -99,7 +132,7 @@ function makeScroller(className, prevButton = 'scroller__prev', nextButton = 'sc
     }
 
     document.querySelectorAll(`.${className}`).forEach(element => {
-        new Scroller(element, fadeWidth, elementsPerSlide, prevButton, nextButton);
+        new Scroller(element, fadeWidth, elementsPerSlide, prevButton, nextButton, breakpoints);
     });
 }
 
