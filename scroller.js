@@ -88,7 +88,7 @@ function makeScroller({
                     width: fit-content;
                     gap: ${this.gap}px;
                     overflow: visible;
-                    transition: transform 0.5s ease-in-out;
+                    transition: transform 1s ease-in-out;
                 }
                 .${className} .scroller__item {
                     width: ${itemWidth}px;

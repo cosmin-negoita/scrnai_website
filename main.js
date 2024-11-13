@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     makeScroller({ className: 'useCases__scroller', elementsPerSlide: { desktop: 3, tablet: 2, mobile: 1 } });
 
     // Initialize marquee
-    makeMarquee({ className: 'marquee', duration: 10, gap: 16, direction: 'left', fadeWidth: 80 });
-    makeMarquee({ className: 'input', duration: 10, gap: 16, direction: 'right', fadeWidth: 80 });
-    makeMarquee({ className: 'output', duration: 10, gap: 16, direction: 'right', fadeWidth: 80 });
+    makeMarquee({ className: 'marquee', duration: 20, gap: 16, direction: 'left', fadeWidth: 80 });
+    makeMarquee({ className: 'input', duration: 20, gap: 16, direction: 'right', fadeWidth: 80 });
+    makeMarquee({ className: 'output', duration: 20, gap: 16, direction: 'right', fadeWidth: 80 });
 
     // Accordion
     const accordions = document.querySelectorAll('.accordion');
