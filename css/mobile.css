@@ -193,11 +193,11 @@ NavBar
     height: 24px;
 }
 
-.navBar__menu__item.navBar__menu__item--link {
+.wrapper .login-button {
     display: none;
 }
 
-.navBar .login-button {
+.wrapper .hide-mobile {
     display: none;
 }
 

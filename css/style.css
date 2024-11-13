@@ -19,7 +19,7 @@ html {
     scroll-behavior: smooth;
 }
 
-#how-it-works, #why-us, #candidates, #use-cases, #testimonials, #faq {
+#how-it-works, #why-us, #candidates, #use-cases, #testimonials, #faq, #why {
     scroll-margin-top: 140px;
 }
 
@@ -340,6 +340,57 @@ NavBar
 }
 .navBar__menu__item--btn:hover {
     opacity: 0.5;
+}
+
+.mobile-menu {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(30px);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+.mobile-menu--active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mobile-menu--open {
+    opacity: 1;
+}
+
+.mobile-menu__item {
+    padding: var(--gap-m);
+    align-items: center;
+    width: 100%;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: var(--radius-m);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-s);
+}
+
+.mobile-menu__item.login-button {
+    width: fit-content;
+}
+
+.close-button {
+    position: absolute;
+    top: var(--gap-l);
+    right: var(--gap-l);
+    background: none;
+    padding: var(--gap-m);
+    border: none;
+    cursor: pointer;
 }
 
 /*=============================================

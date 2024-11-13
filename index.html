@@ -9,22 +9,38 @@
     <script type="module" src="main.js"></script>
 </head>
 <body>
+    <div class="mobile-menu">
+        <button class="close-button"><img src="img/icon-cross.svg" alt="Close"></button>
+        <div class="container container--center pad-xxl gap-m">
+            <a href="#how-it-works" class="mobile-menu__item body-big">How it Works</a>
+            <a href="#why" class="mobile-menu__item body-big">Why Us</a>
+            <a href="#candidates" class="mobile-menu__item body-big">Candidates</a>
+            <a href="#use-cases" class="mobile-menu__item body-big">Use Cases</a>
+            <a href="https://app.scrn.ai/login" class="mobile-menu__item body-big navBar__menu__item--ghost-btn login-button">
+                <img src="img/icon-circle-user.svg" alt="Login"> 
+                <span>Login</span>
+            </a>
+        </div>
+    </div>
     <div class="wrapper">
         <div class="navBar">
             <img src="img/logo.svg" alt="Scrn.ai" class="logo">
             <div class="navBar__menu">
-                <a href="#how-it-works" class="navBar__menu__item navBar__menu__item--link"><span class="body-small">How it Works</span></a>
-                <a href="#why-us" class="navBar__menu__item navBar__menu__item--link"><span class="body-small">Why Us</span></a>
-                <a href="#candidates" class="navBar__menu__item navBar__menu__item--link"><span class="body-small">Candidates</span></a>
-                <a href="#use-cases" class="navBar__menu__item navBar__menu__item--link"><span class="body-small">Use Cases</span></a>
-                <a href="https://app.scrn.ai/login" class="navBar__menu__item navBar__menu__item--ghost-btn login-button">
+                <a href="#how-it-works" class="navBar__menu__item navBar__menu__item--link hide-mobile"><span class="body-small">How it Works</span></a>
+                <a href="#why-us" class="navBar__menu__item navBar__menu__item--link hide-mobile"><span class="body-small">Why Us</span></a>
+                <a href="#candidates" class="navBar__menu__item navBar__menu__item--link hide-mobile"><span class="body-small">Candidates</span></a>
+                <a href="#use-cases" class="navBar__menu__item navBar__menu__item--link hide-mobile"><span class="body-small">Use Cases</span></a>
+                <a href="https://app.scrn.ai/login" class="navBar__menu__item navBar__menu__item--ghost-btn login-button hide-mobile">
                     <img src="img/icon-circle-user.svg" alt="Login">                        
                     <span class="body-small">Login</span>
                 </a>
-                <a href="https://app.scrn.ai/register" class="navBar__menu__item navBar__menu__item--btn">
+                <a href="https://app.scrn.ai/register" class="navBar__menu__item navBar__menu__item--btn signup-button">
                     <img src="img/icon-rocket.svg" alt="Sign Up">                          
                     <span class="body-small">Sign Up</span>
                 </a>
+                <button class="navBar__menu-button navBar__menu__item navBar__menu__item--link">
+                    <img src="img/icon-menu.svg" alt="Menu">
+                </button>
             </div>
         </div>
         <div class="sections">
@@ -203,7 +219,7 @@
                     </div>
                 </div>
             </div>
-            <div id="why-us" class="automate automate--tablet section container container--center pad-side-no gap-xl">
+            <div id="why" class="automate automate--tablet section container container--center pad-side-no gap-xl">
                 <div class="container container--horiz container--center">
                     <div class="input">
                         <img src="img/application-01.svg">
@@ -267,8 +283,8 @@
                     </div>
                 </div>
             </div>
-            <div class="container gap-xl pad-xl pad-top-no pad-side-no">
-                <div id="candidates" class="section card-bg pad-xxl pad-side-no pad-bot-no candidates">
+            <div id="candidates" class="container gap-xl pad-xl pad-top-no pad-side-no">
+                <div class="section card-bg pad-xxl pad-side-no pad-bot-no candidates">
                     <div class="container container--center gap-xxl">
                         <div class="content-scroller container gap-xxl">
                             <div class="container container--center gap-xl">
