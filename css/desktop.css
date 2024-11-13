@@ -167,7 +167,7 @@ NavBar
     height: 32px;
 }
 
-.navBar__menu-button {
+.wrapper .navBar__menu-button {
     display: none;
 }
 
